@@ -17,9 +17,11 @@ Route::get('/about', 'PagesController@about')->name('about');
 
 Route::get('/contact', 'PagesController@contact')->name('contact');
 
-Route::post('/contact', function() {
-    $data = request() -> all();
+Route::post('/contact', 'PagesController@store')->name('contact.store');
 
-    echo "Email: " . $data['email'] . '<br>';
-    echo "Body: " . $data['body'];
-});
+//Route::post('/contact', function() {
+//    $data = request() -> all();
+//
+//    echo "Email: " . $data['email'] . '<br>';
+//    echo "Body: " . $data['body'];
+//});
